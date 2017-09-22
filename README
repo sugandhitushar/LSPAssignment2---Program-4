@@ -1,0 +1,31 @@
+NAME - program.c
+
+USAGE - 
+$ make
+$ make run
+
+DESCRIPTION - 
+Parent creates 2 child processes and waits until both of them are terminated.
+
+Example -
+$ make
+gcc -c program.c
+gcc -o forknWait program.o
+
+$ make run
+./forknWait
+Parent:: pid=5953
+Child1:: Created
+Parent:: Before wait.
+Child2:: Created
+Child2:: pid=5955
+Child2:: Sleeping for 5 seconds.
+Child1:: pid=5954
+Child1:: Sleeping for 5 seconds.
+Child2:: Sleep completed
+Child1:: Sleep completed
+Child2:: Terminating
+Child1:: Terminating
+Parent:: Child process with pid: 5954 terminated with status: 0
+Parent:: Child process with pid: 5955 terminated with status: 0
+Parent:: terminating
